@@ -1,8 +1,9 @@
-package controllers;
+package controller;
 
 import model.ConstructionCompany;
 import org.springframework.web.bind.annotation.*;
 import utils.ConstructionCompanyService;
+
 
 import java.util.List;
 
@@ -22,6 +23,11 @@ public class ConstructionCompanyController {
 
     @GetMapping("/{companyId}")
     public ConstructionCompany getCompanyById(@PathVariable String companyId) {
+        return companyService.getCompanyById(companyId);
+    }
+
+    @GetMapping("/{companyId}/houses")
+    public ConstructionCompany getCompanyByHouses(@PathVariable String companyId) {
         return companyService.getCompanyById(companyId);
     }
 

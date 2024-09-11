@@ -1,5 +1,6 @@
 package model;
 
+
 public class House {
     private String houseId;
     private String address;

@@ -1,9 +1,14 @@
-package controllers;
+package controller;
 
 import model.House;
 import org.springframework.web.bind.annotation.*;
 import utils.HouseService;
-
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import java.util.List;
 
 
@@ -25,6 +30,7 @@ public class HouseController {
     public House getHouseById(@PathVariable String houseId) {
         return houseService.getHouseById(houseId);
     }
+
 
     @PostMapping
     public House createHouse(@RequestBody House house) {
