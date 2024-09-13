@@ -22,12 +22,12 @@ public class ConstructionCompanyController {
     }
 
     @GetMapping("/{companyId}")
-    public ConstructionCompany getCompanyById(@PathVariable String companyId) {
+    public ConstructionCompany getCompanyById(@PathVariable Long companyId) {
         return companyService.getCompanyById(companyId);
     }
 
     @GetMapping("/{companyId}/houses")
-    public ConstructionCompany getCompanyByHouses(@PathVariable String companyId) {
+    public ConstructionCompany getCompanyByHouses(@PathVariable Long companyId) {
         return companyService.getCompanyById(companyId);
     }
 
@@ -37,12 +37,12 @@ public class ConstructionCompanyController {
     }
 
     @PutMapping("/{companyId}")
-    public ConstructionCompany updateCompany(@PathVariable String companyId, @RequestBody ConstructionCompany company) {
+    public ConstructionCompany updateCompany(@PathVariable Long companyId, @RequestBody ConstructionCompany company) {
         return companyService.updateCompany(companyId, company);
     }
 
     @DeleteMapping("/{companyId}")
-    public void deleteCompany(@PathVariable String companyId) {
+    public void deleteCompany(@PathVariable Long companyId) {
         companyService.deleteCompany(companyId);
     }
 }

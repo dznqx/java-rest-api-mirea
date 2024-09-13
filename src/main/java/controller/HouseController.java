@@ -21,7 +21,7 @@ public class HouseController {
     }
 
     @GetMapping("/{houseId}")
-    public House getHouseById(@PathVariable String houseId) {
+    public House getHouseById(@PathVariable Long houseId) {
         return houseService.getHouseById(houseId);
     }
 
@@ -32,12 +32,12 @@ public class HouseController {
     }
 
     @PutMapping("/{houseId}")
-    public House updateHouse(@PathVariable String houseId, @RequestBody House house) {
+    public House updateHouse(@PathVariable Long houseId, @RequestBody House house) {
         return houseService.updateHouse(houseId, house);
     }
 
     @DeleteMapping("/{houseId}")
-    public void deleteHouse(@PathVariable String houseId) {
+    public void deleteHouse(@PathVariable Long houseId) {
         houseService.deleteHouse(houseId);
     }
 }

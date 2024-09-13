@@ -9,7 +9,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "house")
 public class House {
-    private String houseId;
+    private Long houseId;
     private String address;
     private String Name;
     private int totalFloors;
@@ -19,11 +19,11 @@ public class House {
     private ConstructionCompany constructionCompany;
 
     // Геттеры и сеттеры
-    public String getHouseId() {
+    public Long getHouseId() {
         return houseId;
     }
 
-    public void setHouseId(String houseId) {
+    public void setHouseId(Long houseId) {
         this.houseId = houseId;
     }
 
@@ -58,8 +58,8 @@ public class House {
     public void setConstructionCompany(ConstructionCompany constructionCompany) {
         this.constructionCompany = constructionCompany;
     }
-
     public String getName() { return Name;}
-    public void setName(String name) { Name = name;}
+
+    public void setName(String name) { this.Name = name;}
 }
 

@@ -2,46 +2,50 @@ package utils;
 
 import model.Apartment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import repository.ApartmentRepository;
-import repository.ConstructionCompanyRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ApartmentService {
     @Autowired
     private ApartmentRepository apartmentRepository;
 
-    private final List<Apartment> apartments = new ArrayList<>();
 
     public List<Apartment> getAllApartments() {
-        return apartments;
+        return apartmentRepository.findAll();
     }
 
-    public Apartment getApartmentById(String apartmentId) {
-        return apartments.stream()
-                .filter(apartment -> apartment.getApartmentId().equals(apartmentId))
-                .findFirst()
-                .orElse(null);
+    // Получить квартиру по ID
+    public Optional<Apartment> getApartmentById(Long apartmentId) {
+        return apartmentRepository.findById(apartmentId);
     }
 
+    // Создать новую квартиру
     public Apartment createApartment(Apartment apartment) {
-        apartments.add(apartment);
-        return apartment;
+        return apartmentRepository.save(apartment);
     }
 
-    public Apartment updateApartment(String apartmentId, Apartment updatedApartment) {
-        Apartment existingApartment = getApartmentById(apartmentId);
-        if (existingApartment != null) {
-            existingApartment.setNumberOfRooms(updatedApartment.getNumberOfRooms());
-            // Обновите другие поля по мере необходимости
+    // Обновить существующую квартиру
+    public Apartment updateApartment(Long apartmentId, Apartment updatedApartment) {
+        return apartmentRepository.findById(apartmentId)
+                .map(apartment -> {
+                    apartment.setNumberOfRooms(updatedApartment.getNumberOfRooms());
+                    return apartmentRepository.save(apartment);
+                })
+                .orElseThrow(() -> new ResourceNotFoundException("Apartment not found with id " + apartmentId));
+    }
+
+    // Удалить квартиру по ID
+    public void deleteApartment(Long apartmentId) {
+        if (apartmentRepository.existsById(apartmentId)) {
+            apartmentRepository.deleteById(apartmentId);
+        } else {
+            throw new ResourceNotFoundException("Apartment not found with id " + apartmentId);
         }
-        return existingApartment;
-    }
-
-    public void deleteApartment(String apartmentId) {
-        apartments.removeIf(apartment -> apartment.getApartmentId().equals(apartmentId));
     }
 }

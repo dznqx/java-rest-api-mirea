@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface HouseRepository extends JpaRepository<House, Long> {
-    // Дополнительные методы поиска при необходимости
 }

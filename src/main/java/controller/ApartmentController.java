@@ -1,8 +1,10 @@
 package controller;
 
 import model.Apartment;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import utils.ApartmentService;
+
 import java.util.List;
 
 @RestController
@@ -19,9 +21,11 @@ public class ApartmentController {
         return apartmentService.getAllApartments();
     }
 
-    @GetMapping("/{apartmentId}")
-    public Apartment getApartmentById(@PathVariable String apartmentId) {
-        return apartmentService.getApartmentById(apartmentId);
+    @GetMapping("/{id}")
+    public ResponseEntity<Apartment> getApartmentById(@PathVariable Long id) {
+        return apartmentService.getApartmentById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
@@ -30,12 +34,12 @@ public class ApartmentController {
     }
 
     @PutMapping("/{apartmentId}")
-    public Apartment updateApartment(@PathVariable String apartmentId, @RequestBody Apartment apartment) {
+    public Apartment updateApartment(@PathVariable Long apartmentId, @RequestBody Apartment apartment) {
         return apartmentService.updateApartment(apartmentId, apartment);
     }
 
     @DeleteMapping("/{apartmentId}")
-    public void deleteApartment(@PathVariable String apartmentId) {
+    public void deleteApartment(@PathVariable Long apartmentId) {
         apartmentService.deleteApartment(apartmentId);
     }
 }

@@ -12,17 +12,17 @@ public class ConstructionCompany {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private String companyId;
+    private Long companyId;
     private String name;
     private String address;
     private String contactNumber;
 
     // Геттеры и сеттеры
-    public String getCompanyId() {
+    public Long getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(String companyId) {
+    public void setCompanyId(Long companyId) {
         this.companyId = companyId;
     }
 

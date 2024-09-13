@@ -12,18 +12,18 @@ public class Apartment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private String apartmentId;
+    private Long apartmentId;
     private int floor;
     private int numberOfRooms;
     private double area;
     private String houseId;
 
     // Геттеры и сеттеры
-    public String getApartmentId() {
+    public Long getApartmentId() {
         return apartmentId;
     }
 
-    public void setApartmentId(String apartmentId) {
+    public void setApartmentId(Long apartmentId) {
         this.apartmentId = apartmentId;
     }
 
