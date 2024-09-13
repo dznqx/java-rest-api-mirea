@@ -1,12 +1,21 @@
 package model;
 
+import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
+
+@Entity
+@Table(name = "house")
 public class House {
     private String houseId;
     private String address;
     private String Name;
     private int totalFloors;
     private int builtYear;
+    @ManyToOne
+    @JoinColumn(name = "construction_company_company_id")
     private ConstructionCompany constructionCompany;
 
     // Геттеры и сеттеры

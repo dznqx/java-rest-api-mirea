@@ -1,13 +1,18 @@
 package utils;
 
 import model.House;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import repository.HouseRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class HouseService {
+    @Autowired
+    private HouseRepository houseRepository;
+
     private final List<House> houses = new ArrayList<>();
 
     public List<House> getAllHouses() {

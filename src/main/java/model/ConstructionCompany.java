@@ -1,6 +1,17 @@
 package model;
 
+import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Entity
+@Table(name = "constructioncompany")
 public class ConstructionCompany {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private String companyId;
     private String name;
     private String address;

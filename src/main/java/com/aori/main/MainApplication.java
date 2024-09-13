@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import com.aori.main.*;
 
 
-@SpringBootApplication(scanBasePackages = {"controller","model","utils"})
+@SpringBootApplication(scanBasePackages = {"controller","model","utils","repository"})
 public class MainApplication {
     public static void main(String[] args) {
         SpringApplication.run(MainApplication.class, args);

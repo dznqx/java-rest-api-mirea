@@ -1,13 +1,19 @@
 package utils;
 
 import model.Apartment;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import repository.ApartmentRepository;
+import repository.ConstructionCompanyRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ApartmentService {
+    @Autowired
+    private ApartmentRepository apartmentRepository;
+
     private final List<Apartment> apartments = new ArrayList<>();
 
     public List<Apartment> getAllApartments() {
