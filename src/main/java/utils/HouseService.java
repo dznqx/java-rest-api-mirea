@@ -11,7 +11,6 @@ import java.util.List;
 @Service
 public class HouseService {
 
-    @Autowired
     private HouseRepository houseRepository;
 
     // Получить все дома

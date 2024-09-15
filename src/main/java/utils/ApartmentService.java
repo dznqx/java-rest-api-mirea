@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 public class ApartmentService {
-    @Autowired
+
     private ApartmentRepository apartmentRepository;
 
 

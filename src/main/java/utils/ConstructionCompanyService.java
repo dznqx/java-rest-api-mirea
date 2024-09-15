@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class ConstructionCompanyService {
 
-    @Autowired
+
     private ConstructionCompanyRepository constructionCompanyRepository;
 
     // Получить все компании

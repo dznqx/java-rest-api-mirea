@@ -1,10 +1,9 @@
 package model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-
 
 @Entity
 @Table(name = "house")
