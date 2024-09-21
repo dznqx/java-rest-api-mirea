@@ -1,9 +1,11 @@
 package controller;
 
 import model.House;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 import utils.HouseService;
 import java.util.List;
+import repository.HouseRepository;
 
 
 @RestController
@@ -16,7 +18,7 @@ public class HouseController {
     }
 
     @GetMapping
-    public List<House> getAllHouses() {
+    public Iterable<House> getAllHouses() {
         return houseService.getAllHouses();
     }
 

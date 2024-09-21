@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com.aori</groupId>
     <artifactId>main</artifactId>
@@ -56,11 +56,6 @@
             <version>1.18.34</version>
         </dependency>
         <dependency>
-            <groupId>org.datanucleus</groupId>
-            <artifactId>jakarta.persistence</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
             <version>6.1.12</version>
@@ -71,9 +66,23 @@
             <version>3.3.2</version>
         </dependency>
         <dependency>
-            <groupId>org.datanucleus</groupId>
-            <artifactId>javax.persistence</artifactId>
-            <version>2.2.4</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.common</groupId>
+            <artifactId>hibernate-commons-annotations</artifactId>
+            <version>5.0.4.Final</version>
         </dependency>
     </dependencies>
 

@@ -1,20 +1,28 @@
 package utils;
 
+import lombok.NoArgsConstructor;
 import model.House;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
+import repository.ApartmentRepository;
 import repository.HouseRepository;
 
 import java.util.List;
 
+@NoArgsConstructor(force = true)
 @Service
 public class HouseService {
 
     private HouseRepository houseRepository;
 
+    public HouseService(HouseRepository houseRepository) {
+        this.houseRepository = houseRepository;
+    }
+
     // Получить все дома
-    public List<House> getAllHouses() {
+    public Iterable<House> getAllHouses() {
         return houseRepository.findAll();
     }
 

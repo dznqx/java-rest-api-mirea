@@ -1,23 +1,25 @@
 package controller;
 
 import model.Apartment;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import utils.ApartmentService;
+import repository.ApartmentRepository;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/apartments")
 public class ApartmentController {
-    private final ApartmentService apartmentService;
+    private ApartmentService apartmentService;
 
     public ApartmentController(ApartmentService apartmentService) {
         this.apartmentService = apartmentService;
     }
 
     @GetMapping
-    public List<Apartment> getAllApartments() {
+    public Iterable<Apartment> getAllApartments() {
         return apartmentService.getAllApartments();
     }
 

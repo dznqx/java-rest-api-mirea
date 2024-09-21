@@ -1,12 +1,14 @@
 package model;
 
-import javax.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "house")
+@Table(name = "houses")
 public class House {
     private Long houseId;
     private String address;
@@ -14,8 +16,10 @@ public class House {
     private int totalFloors;
     private int builtYear;
     @ManyToOne
-    @JoinColumn(name = "construction_company_company_id")
+    @JoinColumn(name = "construction_company_id")
     private ConstructionCompany constructionCompany;
+    @Id
+    private Long id;
 
     // Геттеры и сеттеры
     public Long getHouseId() {
@@ -60,5 +64,13 @@ public class House {
     public String getName() { return Name;}
 
     public void setName(String name) { this.Name = name;}
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }
 

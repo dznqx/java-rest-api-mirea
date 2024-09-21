@@ -1,9 +1,10 @@
 package controller;
 
 import model.ConstructionCompany;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 import utils.ConstructionCompanyService;
-
 
 import java.util.List;
 
@@ -12,12 +13,13 @@ import java.util.List;
 public class ConstructionCompanyController {
     private final ConstructionCompanyService companyService;
 
+    @Autowired
     public ConstructionCompanyController(ConstructionCompanyService companyService) {
         this.companyService = companyService;
     }
 
     @GetMapping
-    public List<ConstructionCompany> getAllCompanies() {
+    public Iterable<ConstructionCompany> getAllCompanies() {
         return companyService.getAllCompanies();
     }
 

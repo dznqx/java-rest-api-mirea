@@ -1,9 +1,9 @@
 package repository;
 
 import model.ConstructionCompany;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ConstructionCompanyRepository extends JpaRepository<ConstructionCompany, Long> {
+public interface ConstructionCompanyRepository extends CrudRepository<ConstructionCompany, Long> {
 }
