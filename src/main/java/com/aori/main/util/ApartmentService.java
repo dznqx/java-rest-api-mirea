@@ -1,18 +1,12 @@
-package utils;
+package com.aori.main.util;
 
-import lombok.NoArgsConstructor;
-import model.Apartment;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
+import com.aori.main.model.Apartment;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
-import repository.ApartmentRepository;
+import com.aori.main.repository.ApartmentRepository;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
-@NoArgsConstructor(force = true)
 @Service
 public class ApartmentService {
 

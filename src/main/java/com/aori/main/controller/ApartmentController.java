@@ -1,13 +1,9 @@
-package controller;
+package com.aori.main.controller;
 
-import model.Apartment;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
+import com.aori.main.model.Apartment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import utils.ApartmentService;
-import repository.ApartmentRepository;
-
-import java.util.List;
+import com.aori.main.util.ApartmentService;
 
 @RestController
 @RequestMapping("/apartments")

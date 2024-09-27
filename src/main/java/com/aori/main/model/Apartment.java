@@ -1,4 +1,4 @@
-package model;
+package com.aori.main.model;
 
 import jakarta.persistence.Entity;
 

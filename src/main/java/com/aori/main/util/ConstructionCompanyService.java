@@ -1,16 +1,10 @@
-package utils;
+package com.aori.main.util;
 
-import lombok.NoArgsConstructor;
-import model.ConstructionCompany;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
+import com.aori.main.model.ConstructionCompany;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
-import repository.ConstructionCompanyRepository;
+import com.aori.main.repository.ConstructionCompanyRepository;
 
-import java.util.List;
-
-@NoArgsConstructor(force = true)
 @Service
 public class ConstructionCompanyService {
 

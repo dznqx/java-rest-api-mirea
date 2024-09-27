@@ -1,11 +1,8 @@
-package controller;
+package com.aori.main.controller;
 
-import model.House;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
+import com.aori.main.model.House;
 import org.springframework.web.bind.annotation.*;
-import utils.HouseService;
-import java.util.List;
-import repository.HouseRepository;
+import com.aori.main.util.HouseService;
 
 
 @RestController

@@ -1,22 +1,17 @@
-package utils;
+package com.aori.main.util;
 
-import lombok.NoArgsConstructor;
-import model.House;
+import com.aori.main.model.House;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
-import repository.ApartmentRepository;
-import repository.HouseRepository;
+import com.aori.main.repository.HouseRepository;
 
-import java.util.List;
-
-@NoArgsConstructor(force = true)
 @Service
 public class HouseService {
 
     private HouseRepository houseRepository;
 
+    @Autowired
     public HouseService(HouseRepository houseRepository) {
         this.houseRepository = houseRepository;
     }

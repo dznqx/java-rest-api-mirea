@@ -1,12 +1,9 @@
-package controller;
+package com.aori.main.controller;
 
-import model.ConstructionCompany;
+import com.aori.main.model.ConstructionCompany;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.web.bind.annotation.*;
-import utils.ConstructionCompanyService;
-
-import java.util.List;
+import com.aori.main.util.ConstructionCompanyService;
 
 @RestController
 @RequestMapping("/companies")
